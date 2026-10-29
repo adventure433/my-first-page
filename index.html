@@ -8,7 +8,7 @@
   :root { --bg:#dbeafe; --card:#fff; --text:#1e293b; --muted:#64748b; --accent:#2563eb; --tag:#eff6ff; }
   * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+    margin: 0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 16px;
     background: linear-gradient(-45deg, var(--bg), #e0f2fe, #c7d9fb, #e6f0ff);
     background-size: 400% 400%; animation: flow 15s ease infinite;
     color: var(--text);
@@ -19,7 +19,8 @@
     50% { background-position: 100% 50%; }
   }
   .card {
-    width: 100%; max-width: 380px; padding: 40px 28px; text-align: center;
+    width: 100%; max-width: 480px; margin: auto 0; padding: 40px 28px; text-align: center;
+    overflow-wrap: anywhere;
     background: var(--card); border-radius: 16px; box-shadow: 0 2px 12px rgba(37,99,235,.08);
   }
   .avatar {
@@ -32,6 +33,23 @@
   .tags span { padding: 4px 12px; border-radius: 999px; background: var(--tag); color: var(--accent); font-size: 14px; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
+  section { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--tag); }
+  h2 { margin: 0 0 16px; font-size: 18px; }
+  .hobbies { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+  .hobbies li { padding: 12px; border-radius: 12px; background: var(--tag); }
+  .contacts { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .contacts a, .contacts span {
+    display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px;
+    padding: 8px 12px; border-radius: 12px; background: var(--tag);
+  }
+  .contacts span { color: var(--muted); }
+  footer { margin: 16px 0 0; font-size: 13px; color: var(--muted); text-align: center; }
+  @media (max-width: 480px) {
+    body { padding: 12px; }
+    .card { padding: 28px 20px; }
+    h1 { font-size: 22px; }
+    .hobbies { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
@@ -44,7 +62,26 @@
       <span>编程</span>
       <span>阅读</span>
     </div>
-    <a href="mailto:your@email.com">your@email.com</a>
+
+    <section>
+      <h2>我的兴趣爱好</h2>
+      <ul class="hobbies">
+        <li>📚 阅读</li>
+        <li>🎧 音乐</li>
+        <li>🏃 运动</li>
+        <li>🎮 游戏</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>联系方式</h2>
+      <ul class="contacts">
+        <li><a href="mailto:your@email.com">✉️ your@email.com</a></li>
+        <li><span>💬 微信：your-wechat</span></li>
+        <li><span>🐙 GitHub：your-github</span></li>
+      </ul>
+    </section>
   </main>
+  <footer>© 2026 你的名字 · 用 ❤ 做的第一个网页</footer>
 </body>
 </html>

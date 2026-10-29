@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>个人介绍</title>
+<style>
+  :root { --bg:#dbeafe; --card:#fff; --text:#1e293b; --muted:#64748b; --accent:#2563eb; --tag:#eff6ff; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+    background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  }
+  .card {
+    width: 100%; max-width: 380px; padding: 40px 28px; text-align: center;
+    background: var(--card); border-radius: 16px; box-shadow: 0 2px 12px rgba(37,99,235,.08);
+  }
+  .avatar {
+    width: 96px; height: 96px; margin: 0 auto 16px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 44px; background: var(--tag);
+  }
+  h1 { margin: 0 0 8px; font-size: 24px; }
+  p { margin: 0 0 20px; color: var(--muted); line-height: 1.6; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
+  .tags span { padding: 4px 12px; border-radius: 999px; background: var(--tag); color: var(--accent); font-size: 14px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="avatar">😀</div>
+    <h1>你的名字</h1>
+    <p>你好！我是一名热爱学习和创造的人，这里是我的简单介绍。</p>
+    <div class="tags">
+      <span>设计</span>
+      <span>编程</span>
+      <span>阅读</span>
+    </div>
+    <a href="mailto:your@email.com">your@email.com</a>
+  </main>
+</body>
+</html>
